@@ -1,4 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+
+import 'package:flutter_application_1/utills/routes.dart';
 
 class Welcome extends StatelessWidget {
   @override
@@ -21,41 +25,69 @@ class Welcome extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Container(
-              width: 300,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(29),
-                child: Stack(
-                  children: <Widget>[
-                    Positioned.fill(
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: <Color>[
-                              Color(0xFF804FB3),
-                              Color(0xFF9969C7),
-                              Color(0xFFB589D6),
-                            ],
-                          ),
-                        ),
-                      ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.loginRoute);
+              },
+              child: AnimatedContainer(
+                  duration: Duration(seconds: 1),
+                  width: 250,
+                  height: 50,
+                  alignment: Alignment.center,
+                  child: Text(
+                    'LOGIN',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
                     ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.all(20),
-                        primary: Colors.white,
-                        textStyle: const TextStyle(fontSize: 20),
-                      ),
-                      onPressed: () {},
-                      child: Text('LOGIN', textAlign: TextAlign.center),
-                    ),
-                  ],
-                ),
-              ),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Color(0xff804fb3),
+                      borderRadius: BorderRadius.circular(29),
+                      gradient: LinearGradient(
+                        colors: [
+                          Color(0xff804fb3),
+                          Color(0xff9969c7),
+                          Color(0xffb589d6)
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ))),
             ),
             SizedBox(
               height: 20,
             ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.loginRoute);
+              },
+              child: AnimatedContainer(
+                  duration: Duration(seconds: 1),
+                  width: 250,
+                  height: 50,
+                  alignment: Alignment.center,
+                  child: Text(
+                    'SING UP',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Color(0xff804fb3),
+                      borderRadius: BorderRadius.circular(29),
+                      gradient: LinearGradient(
+                        colors: [
+                          Color(0xff9e9e9e),
+                          Color(0xffbdbdbd),
+                          Color(0xffd3d3d3)
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ))),
+            )
           ],
         ));
   }
